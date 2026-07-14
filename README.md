@@ -1,2 +1,5 @@
-## Notes
-This is my dots config. My personal preference was to create ~/Projects/dots and then symlink the respective dots folders to their proper locations, such as symlinking ~/Projects/dots/hypr ~/.config/hypr
+## Hypr
+The Hyprland config is my own version, modifying the default config to be more easily editable and easier to look through.
+
+## SDDM
+The SDDM theme is not my own it is a [Qylock](https://github.com/Darkkal44/qylock) theme. Qylock has tons of awesome themes and I reccomend checking them out!
