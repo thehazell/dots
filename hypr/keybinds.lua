@@ -11,7 +11,7 @@ local closeWindowBind = hl.bind(mainMod .. " + Q", hl.dsp.window.close())
 
 -- quick binds so i can record an sddm login showcase
 -- theres surely a better way to screen cap
-hl.bind(mainMod .. " + X", hl.dsp.exec_cmd("hyprcap rec-start"))
+hl.bind(mainMod .. " + X", hl.dsp.exec_cmd("hyprcap rec-start -w"))
 hl.bind(mainMod .. " + A", hl.dsp.exec_cmd("hyprcap rec-stop"))
 
 -- graceful shutdown
