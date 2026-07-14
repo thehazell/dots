@@ -9,6 +9,11 @@ hl.bind(mainMod .. " + Z", hl.dsp.exec_cmd(config.terminal))
 -- closeWindowBind:set_enabled(false)
 local closeWindowBind = hl.bind(mainMod .. " + Q", hl.dsp.window.close())
 
+-- quick binds so i can record an sddm login showcase
+-- theres surely a better way to screen cap
+hl.bind(mainMod .. " + X", hl.dsp.exec_cmd("hyprcap rec-start"))
+hl.bind(mainMod .. " + A", hl.dsp.exec_cmd("hyprcap rec-stop"))
+
 -- graceful shutdown
 hl.bind(mainMod .. " + ESCAPE", hl.dsp.exec_cmd("command -v hyprshutdown >/dev/null 2>&1 && hyprshutdown || hyprctl dispatch 'hl.dsp.exit()'"))
 
