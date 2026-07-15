@@ -3,12 +3,16 @@
 local config = require("config")
 
 hl.on("hyprland.start", function()
-    -- kind of a dirty fix(?) for caelestia
-    -- not loading some icons from theme
     hl.exec_cmd(config.shell)
 
     -- starts vesktop on hyprland start
     -- take this as an example on how to autostart apps
     hl.exec_cmd(config.vesktop)
+
+    -- NOTE
+    -- for this to work correctly, you must have already setup the source properly
+    -- the easiest one by far is screen capture (pipewire)
+    -- if you experience issues such as incorrect window recorded, or nothing at all, check your source settings
+    hl.exec_cmd(config.obs)
 
  end)
