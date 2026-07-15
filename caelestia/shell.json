@@ -1,0 +1,12 @@
+{
+  "appearance": {
+    "transparency": {
+      "enabled": true,
+      "base": 0.72,
+      "layers": 0.28
+    }
+  },
+  "services": {
+    "smartScheme": true
+  }
+}
