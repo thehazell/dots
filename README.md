@@ -1,18 +1,19 @@
 > [!WARNING]
 > You must have the following dependencies installed for the full configuration to work properly:
 >
-> | Package           | Minimum Required Version | Install From                                          |
-> | ----------------- | ------------------------ | ----------------------------------------------------- |
-> | `quickshell-git`  | `0.3.0.r3.g7d1c9a9-1`    | Standard repositories                                 |
-> | `caelestia-shell` | `2.1.0-1`                | AUR                                                   |
-> | `obs-studio`      | `32.1.2-7.1`             | Standard repositories                                 |
-> | `sddm`            | `0.21.0-8`               | Standard repositories                                 |
-> | `hyprquickshot`   | `N/A`                    | [GitHub](https://github.com/thehazell/hyprquickshot/) |
-> | `uv`              | `0.11.28`                | Standard repositories                                 |
-> | `obs-cli`         | `0.9.5`                  | [GitHub](https://github.com/pschmitt/obs-cli)         |
-> | `hyprland`        | `0.55.4-1`               | Standard repositories                                 |
-> | `kitty`           | `0.47.4-1.1`             | Standard repositories                                 |
-> | `superfile`       | `1.6.0-1.1`              | Standard repositories                                 |
+> | Package           | Minimum Upstream Version | Minimum Arch Package Version | Install From                                          |
+> | ----------------- | ------------------------ | ---------------------------- | ----------------------------------------------------- |
+> | `quickshell-git`  | `0.3.0`                  | `0.3.0.r3.g7d1c9a9-1`        | AUR                                                   |
+> | `caelestia-shell` | `2.1.0`                  | `2.1.0-1`                    | AUR                                                   |
+> | `obs-studio`      | `32.1.2`                 | `32.1.2-7.1`                 | Standard repositories                                 |
+> | `sddm`            | `0.21.0`                 | `0.21.0-8`                   | Standard repositories                                 |
+> | `hyprquickshot`   | `N/A`                    | `N/A`                        | [GitHub](https://github.com/thehazell/hyprquickshot/) |
+> | `uv`              | `0.11.28`                | `0.11.28`                    | Standard repositories                                 |
+> | `obs-cli`         | `0.9.5`                  | `0.9.5`                      | [GitHub](https://github.com/pschmitt/obs-cli)         |
+> | `hyprland`        | `0.55.4`                 | `0.55.4-1`                   | Standard repositories                                 |
+> | `kitty`           | `0.47.4`                 | `0.47.4-1.1`                 | Standard repositories                                 |
+> | `superfile`       | `1.6.0`                  | `1.6.0-1.1`                  | Standard repositories                                 |
+
 
 # Main Components
 
