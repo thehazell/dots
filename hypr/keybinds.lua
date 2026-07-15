@@ -9,9 +9,7 @@ hl.bind(mainMod .. " + Z", hl.dsp.exec_cmd(config.terminal))
 -- closeWindowBind:set_enabled(false)
 local closeWindowBind = hl.bind(mainMod .. " + Q", hl.dsp.window.close())
 
--- getting rid of this for now, too slow for my liking
--- uses hyprcap to screen record
--- hl.bind(mainMod .. " + SHIFT + R", hl.dsp.exec_cmd("/home/hazel/Projects/dots/hypr/scripts/hyprcap_rec"))
+hl.bind(mainMod .. " + SHIFT + R", hl.dsp.exec_cmd("/home/hazel/Projects/dots/hypr/scripts/record"))
 
 -- open file manager
 hl.bind(mainMod .. " + E", hl.dsp.exec_cmd(config.fileManager))
