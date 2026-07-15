@@ -33,3 +33,10 @@ The included Caelestia color scheme is my own. In addition to the custom color p
 
 <img width="2560" height="1439" alt="Caelestia preview" src="https://github.com/user-attachments/assets/9710997c-0bdf-41d3-ada7-dfe0336abb8e" />
 
+---
+
+## Hyprquickshot
+
+The screenshot tool, Hyprquickshot, is a lightly modified version of [JamDon2's Hyprquickshot](https://github.com/JamDon2/hyprquickshot) with some color updates and notifications for when screenshots are taken, and whether they were saved to the disk, or just to clipboard.
+
+<img width="1920" height="1080" alt="Hyprquickshot" src="https://github.com/user-attachments/assets/a5b9e999-be31-462a-9e70-fdfe0ddeae33" />
