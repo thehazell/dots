@@ -3,17 +3,15 @@ local config = {
     terminal = "kitty",
     fileManager = "dolphin",
     vesktop = "vesktop",
+    obs = "obs",
     ----------- end of apps section -----------
 
     -- if using the caelestia shell this is available
     -- otherwise, use something like vicinae
     menu = "caelestia shell drawers toggle launcher",
 
-    -- if you have hyprquickshot installed, use the default
-    -- if you dont, why? just install it
     screenshot = "quickshell -c hyprquickshot -n",
 
-    -- if using caelestia, we autostart it for you
     shell = "qs -c caelestia",
 
     active_window1 = "rgba(ff8cc8ee)",
