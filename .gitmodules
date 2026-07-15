@@ -1,0 +1,3 @@
+[submodule "tools/hyprquickshot"]
+	path = tools/hyprquickshot
+	url = https://github.com/thehazell/hyprquickshot.git
