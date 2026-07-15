@@ -28,3 +28,6 @@ Current=R1999_1
 ```
 
 The theme would get copied to `/usr/share/sddm/themes/`.
+
+## Note
+The background video will soon not be included in the repo in favor of a small install script that will, in the future, download the background video and icon pack from my CDN. This will be done to avoid an infalted repository size.
