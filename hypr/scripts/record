@@ -1,0 +1,11 @@
+#!/usr/bin/env fish
+
+if test (obs-cli record status) = started
+    if obs-cli record stop
+        notify-send -i "obs" "Recording Stopped" "OBS recording has been stopped."
+    end
+else
+    if obs-cli record start
+        notify-send -i "obs" "Recording Started" "OBS is now recording."
+    end
+end
