@@ -1,7 +1,7 @@
 local config = {
     -- apps used by keybinds, autostart, etc
     terminal = "kitty",
-    fileManager = "dolphin",
+    fileManager = "kitty spf",
     vesktop = "vesktop",
     obs = "obs",
     ----------- end of apps section -----------
