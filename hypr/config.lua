@@ -4,6 +4,7 @@ local config = {
     fileManager = "kitty spf",
     vesktop = "vesktop",
     obs = "obs",
+    music = "spotify",
     ----------- end of apps section -----------
 
     -- if using the caelestia shell this is available
