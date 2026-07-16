@@ -18,11 +18,6 @@ hl.bind(mainMod .. " + SHIFT + A", hl.dsp.workspace.toggle_special(config.obs_sp
 -- closeWindowBind:set_enabled(false)
 local closeWindowBind = hl.bind(mainMod .. " + Q", hl.dsp.window.close())
 
-hl.bind(mainMod .. " + SHIFT + R", hl.dsp.exec_cmd("/home/hazel/Projects/dots/hypr/scripts/record"))
-
--- open file manager
-hl.bind(mainMod .. " + E", hl.dsp.exec_cmd(config.fileManager))
-
 -- toggle floating for the targeted window
 hl.bind(mainMod .. " + V", hl.dsp.window.float({ action = "toggle" }))
 
