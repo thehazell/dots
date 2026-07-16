@@ -5,6 +5,15 @@ local mainMod = "SUPER" -- Sets "Windows" key as main modifier
 -- open terminal
 hl.bind(mainMod .. " + Z", hl.dsp.exec_cmd(config.terminal))
 
+-- open file manager
+hl.bind(mainMod .. " + E", hl.dsp.exec_cmd(config.fileManager))
+
+-- open app launcher
+hl.bind(mainMod .. " + SPACE", hl.dsp.exec_cmd(config.menu))
+
+-- show OBS special workspace
+hl.bind(mainMod .. " + SHIFT + A", hl.dsp.workspace.toggle_special(config.obs_special_workspace_name))
+
 -- close window
 -- closeWindowBind:set_enabled(false)
 local closeWindowBind = hl.bind(mainMod .. " + Q", hl.dsp.window.close())
@@ -20,9 +29,6 @@ hl.bind(mainMod .. " + V", hl.dsp.window.float({ action = "toggle" }))
 -- toggle fullscreen foor the targeted window
 hl.bind(mainMod .. " + F", hl.dsp.window.fullscreen({ action = "toggle" }))
 
--- open app launcher
-hl.bind(mainMod .. " + SPACE", hl.dsp.exec_cmd(config.menu))
-
 -- toggle pseduotiling for the targeted window
 -- pseudotiling allows a window to main its preffered floting size whie
 -- still being tiled
@@ -31,8 +37,14 @@ hl.bind(mainMod .. " + P", hl.dsp.window.pseudo())
 -- toggles the next split in the tiler between horizontal and vertical
 hl.bind(mainMod .. " + J", hl.dsp.layout("togglesplit")) -- dwindle only
 
+-- toggles screen recording, focuses whatever your OBS settings are
+hl.bind(mainMod .. " + SHIFT + R", hl.dsp.exec_cmd("/home/hazel/Projects/dots/hypr/scripts/record"))
+
 -- Screenshot
 hl.bind("PRINT", hl.dsp.exec_cmd("quickshell -c hyprquickshot -n"))
+
+-- clean shutdown, please use this bind to ensure OBS and other programs do not try to enter a safe mode
+hl.bind(mainMod .. " + ESCAPE", hl.dsp.exec_cmd("hyprshutdown -p 'systemctl poweroff'"))
 
 -- Move focus with mainMod + arrow keys
 hl.bind(mainMod .. " + left",  hl.dsp.focus({ direction = "left" }))
@@ -44,8 +56,9 @@ hl.bind(mainMod .. " + down",  hl.dsp.focus({ direction = "down" }))
 -- Move active window to a workspace with mainMod + SHIFT + [0-9]
 for i = 1, 10 do
     local key = i % 10 -- 10 maps to key 0
-    hl.bind(mainMod .. " + " .. key,             hl.dsp.focus({ workspace = i}))
-    hl.bind(mainMod .. " + SHIFT + " .. key,     hl.dsp.window.move({ workspace = i }))
+
+    hl.bind(mainMod .. " + " .. key, hl.dsp.focus({ workspace = i }))
+    hl.bind(mainMod .. " + SHIFT + " .. key, hl.dsp.window.move({ workspace = i }))
 end
 
 -- Scroll through existing workspaces with mainMod + scroll
@@ -60,7 +73,7 @@ hl.bind(mainMod .. " + mouse:273", hl.dsp.window.resize(), { mouse = true })
 -- hl.bind("XF86AudioRaiseVolume", hl.dsp.exec_cmd("wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+"), { locked = true, repeating = true })
 -- hl.bind("XF86AudioLowerVolume", hl.dsp.exec_cmd("wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"),      { locked = true, repeating = true })
 -- hl.bind("XF86AudioMute",        hl.dsp.exec_cmd("wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"),     { locked = true, repeating = true })
--- l.bind("XF86AudioMicMute",     hl.dsp.exec_cmd("wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"),   { locked = true, repeating = true })
+-- l.bind("XF86AudioMicMute",      hl.dsp.exec_cmd("wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"),   { locked = true, repeating = true })
 -- hl.bind("XF86MonBrightnessUp",  hl.dsp.exec_cmd("brightnessctl -e4 -n2 set 5%+"),                  { locked = true, repeating = true })
 -- hl.bind("XF86MonBrightnessDown",hl.dsp.exec_cmd("brightnessctl -e4 -n2 set 5%-"),                  { locked = true, repeating = true })
 
