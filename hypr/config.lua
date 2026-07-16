@@ -18,6 +18,9 @@ local config = {
     active_window2 = "rgba(ffc2e6ee)",
     inactive_window = "rgba(5a4b55aa)",
 
+    -- name of obs special workspace, in case you'd like to name it something else for easier integration with your modifications
+    obs_special_workspace_name = "obs",
+
     -- size of cursor in xcursor system
     -- most  GTK apps, XWayland, and Wayland apps respect this
     xcursor_size = "24",
