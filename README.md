@@ -41,6 +41,24 @@ The following setup guides cover the recommended installation and configuration 
 | SDDM          | [SETUP.md](https://github.com/thehazell/dots/blob/main/sddm/SETUP.md)                                         |
 | HyprQuickShot | [SETUP.md](https://github.com/thehazell/hyprquickshot/blob/bd46adce40940503a2ff587ff2c8e26ab7514156/SETUP.md) |
 
+### Installer
+
+From a clone of this repository, use the installer to initialize
+the submodule and link the user-level configuration:
+
+```bash
+./install.sh all
+```
+
+Review planned changes without modifying anything with `./install.sh --dry-run all`.
+Existing files and symlinks are left untouched by default; pass `--force` only
+when they should be replaced. Privileged system links are intentionally opt-in:
+
+```bash
+./install.sh caelestia-scheme
+./install.sh sddm
+```
+
 ---
 # Main Components
 
@@ -67,4 +85,3 @@ The included Caelestia color scheme is my own. In addition to the custom color p
 The screenshot tool, Hyprquickshot, is a modified version of [JamDon2's Hyprquickshot](https://github.com/JamDon2/hyprquickshot) with color updates, fixes to silence qmllint, and notifications for when screenshots are taken and whether they were saved to the disk, or just to clipboard.
 
 <img width="1920" height="1080" alt="Hyprquickshot" src="https://github.com/user-attachments/assets/a5b9e999-be31-462a-9e70-fdfe0ddeae33" />
-

@@ -1,18 +1,12 @@
-If you prefer to keep the scripts in your dotfiles repository (which is my preference), add the scripts directory to your `PATH` so they can be run from anywhere. We can accomplish this with the following:
+Run the repository installer to symlink the executable scripts into
+`~/.local/bin`:
 
-```fish
-fish_add_path ~/Projects/dots/hypr/scripts
+```bash
+./install.sh link
 ```
 
-You will need to reboot your computer or restart Hyprland for it to pick up the changes.
-
-### Make the scripts executable
-
-If you haven't already, make sure the scripts are executable:
-
-```shell
-chmod +x ~/Projects/dots/hypr/scripts/*
-```
+This avoids hard-coded clone paths. Ensure `~/.local/bin` is on your `PATH`,
+then start a new shell or restart Hyprland to pick up the changes.
 
 After that, you can invoke them directly from anywhere:
 
