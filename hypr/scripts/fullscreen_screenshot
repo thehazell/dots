@@ -1,0 +1,35 @@
+#!/usr/bin/env fish
+
+set save false
+
+for arg in $argv
+    switch $arg
+        case "-s"
+            set save true
+        case "-h" "--help"
+            echo "Usage: "(status filename)" [-s]"
+            echo
+            echo "  -s    Save to ~/Pictures/Screenshots and copy to clipboard"
+            echo "        Otherwise, copy to clipboard only"
+            exit 0
+        case "*"
+            echo "Unknown option: $arg"
+            echo "Usage: "(status filename)" [-s]"
+            exit 1
+    end
+end
+
+if test "$save" = true
+    set dir "$HOME/Pictures/Screenshots"
+    mkdir -p "$dir"
+
+    set file "$dir/"(date +"%Y-%m-%d_%H-%M-%S")".png"
+
+    grim "$file"
+    wl-copy < "$file"
+
+    notify-send -i "shotwell" -a "Hyprcap" "Screenshot taken" "Saved to disk & clipboard"
+else
+    grim - | wl-copy
+    notify-send -i "shotwell" -a "Hyprcap" "Screenshot taken" "Copied to clipboard"
+end
