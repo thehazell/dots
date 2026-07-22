@@ -13,7 +13,7 @@
 > | `hyprland`        | `0.55.4`                 | `0.55.4-1`                   | Standard repositories                                 |
 > | `kitty`           | `0.47.4`                 | `0.47.4-1.1`                 | Standard repositories                                 |
 > | `superfile`       | `1.6.0`                  | `1.6.0-1.1`                  | Standard repositories                                 |
-> | `fish`            | `4.8.1`                  | `4.8.1-1`                    | Standard repositories 
+> | `fish`            | `4.8.1`                  | `4.8.1-1`                    | Standard repositories                                 |
 >
 > These packages include many dependencies of their own, which are all required in order for this to work properly. Hyprquickshot, for example, relies on grim, which is used by the fullscreen screenshot script.
 
