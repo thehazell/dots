@@ -17,6 +17,19 @@
 >
 > These packages include many dependencies of their own, which are all required in order for this to work properly. Hyprquickshot, for example, relies on grim, which is used by the fullscreen screenshot script.
 
+---
+## Setup
+
+The following setup guides cover the recommended installation and configuration for each component:
+
+| Component     | Guide                                                                                                         |
+| ------------- | ------------------------------------------------------------------------------------------------------------- |
+| Caelestia     | [SETUP.md](https://github.com/thehazell/dots/blob/main/caelestia/SETUP.md)                                    |
+| Hypr Scripts  | [SCRIPTS.md](https://github.com/thehazell/dots/blob/main/hypr/SCRIPTS.md)                                     |
+| SDDM          | [SETUP.md](https://github.com/thehazell/dots/blob/main/sddm/SETUP.md)                                         |
+| HyprQuickShot | [SETUP.md](https://github.com/thehazell/hyprquickshot/blob/bd46adce40940503a2ff587ff2c8e26ab7514156/SETUP.md) |
+
+---
 # Main Components
 
 This repository contains my Hyprland configuration, SDDM theme, Caelestia customization, and a collection of tools that streamline my day-to-day workflow.
@@ -42,3 +55,4 @@ The included Caelestia color scheme is my own. In addition to the custom color p
 The screenshot tool, Hyprquickshot, is a lightly modified version of [JamDon2's Hyprquickshot](https://github.com/JamDon2/hyprquickshot) with some color updates and notifications for when screenshots are taken, and whether they were saved to the disk, or just to clipboard.
 
 <img width="1920" height="1080" alt="Hyprquickshot" src="https://github.com/user-attachments/assets/a5b9e999-be31-462a-9e70-fdfe0ddeae33" />
+
