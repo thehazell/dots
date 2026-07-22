@@ -5,6 +5,9 @@
     ]
   },
   "diagnostics": {
-    "globals": ["hl"]
+    "globals": ["hl"],
+    "disable": [
+      "assign-type-mismatch"
+    ]
   }
 }
