@@ -36,16 +36,16 @@ hl.bind(mainMod .. " + P", hl.dsp.window.pseudo())
 hl.bind(mainMod .. " + J", hl.dsp.layout("togglesplit")) -- dwindle only
 
 -- toggles screen recording, focuses whatever your OBS settings are
-hl.bind(mainMod .. " + SHIFT + R", hl.dsp.exec_cmd("/home/hazel/Projects/dots/hypr/scripts/record"))
+hl.bind(mainMod .. " + SHIFT + R", hl.dsp.exec_cmd("record"))
 
 -- screenshot
 hl.bind("PRINT", hl.dsp.exec_cmd("quickshell -c hyprquickshot -n"))
 
 -- fullscreen screenshot to clipboard
-hl.bind(mainMod .. " + PRINT", hl.dsp.exec_cmd("/home/hazel/Projects/dots/hypr/scripts/fullscreen_screenshot"))
+hl.bind(mainMod .. " + PRINT", hl.dsp.exec_cmd("fullscreen_screenshot"))
 
 -- fullscreen screenshot to clipboard and disk
-hl.bind(mainMod .. " + SHIFT + PRINT", hl.dsp.exec_cmd("/home/hazel/Projects/dots/hypr/scripts/fullscreen_screenshot -s"))
+hl.bind(mainMod .. " + SHIFT + PRINT", hl.dsp.exec_cmd("fullscreen_screenshot -s"))
 
 -- clean shutdown, please use this bind to ensure OBS and other programs do not try to enter a safe mode
 hl.bind(mainMod .. " + ESCAPE", hl.dsp.exec_cmd("hyprshutdown -p 'systemctl poweroff'"))
