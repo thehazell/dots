@@ -17,6 +17,18 @@
 >
 > These packages include many dependencies of their own, which are all required in order for this to work properly. Hyprquickshot, for example, relies on grim, which is used by the fullscreen screenshot script.
 
+Using **yay**:
+
+```bash
+yay -S quickshell-git caelestia-shell obs-studio sddm uv hyprland kitty superfile fish
+```
+
+Using **paru**:
+
+```bash
+paru -S quickshell-git caelestia-shell obs-studio sddm uv hyprland kitty superfile fish
+```
+
 ---
 ## Setup
 
