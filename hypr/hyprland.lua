@@ -8,10 +8,8 @@ require("appearance")
 -- config file
 local config = require("config")
 
--- i dont use a trackpad because im not a nerd
 -- require("trackpad")
 
--- no permissions needed... yet
 -- require("permissions")
 
 -- window rules
