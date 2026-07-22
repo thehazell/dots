@@ -3,7 +3,7 @@ local config = require("config")
 local mainMod = "SUPER" -- Sets "Windows" key as main modifier
 
 -- open terminal
-hl.bind(mainMod .. " + Z", hl.dsp.exec_cmd(config.terminal))
+hl.bind(mainMod .. " + RETURN", hl.dsp.exec_cmd(config.terminal))
 
 -- open file manager
 hl.bind(mainMod .. " + E", hl.dsp.exec_cmd(config.fileManager))
