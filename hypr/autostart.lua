@@ -8,8 +8,8 @@ hl.on("hyprland.start", function()
     -- start vesktop on default workspace
     hl.exec_cmd(config.vesktop)
 
-    -- start spotify on workspace 2 without focusing it
-    hl.exec_cmd(config.music, { workspace = "2 silent" })
+    -- start spotify on special workspace without focusing it
+    hl.exec_cmd(config.music, { workspace = "special:" .. config.music_special_workspace_name .. " silent" })
 
     -- NOTE
     -- for this to work correctly, you must have already setup the source properly

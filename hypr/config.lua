@@ -12,17 +12,22 @@ local config = {
     menu = "caelestia shell drawers toggle launcher",
 
     screenshot = "quickshell -c hyprquickshot",
-
+--------------------------------------------------
     -- used by autostart to start caelestia
     shell = "qs -c caelestia",
-
+--------------------------------------------------
     active_window1 = "rgba(ff8cc8ee)",
     active_window2 = "rgba(ffc2e6ee)",
     inactive_window = "rgba(5a4b55aa)",
+--------------------------------------------------
+    -- speical workspace names
 
-    -- name of obs special workspace, in case you'd like to name it something else for easier integration with your modifications
+    -- obs special workspace
     obs_special_workspace_name = "obs",
 
+    -- music special workspace
+    music_special_workspace_name = "music",
+--------------------------------------------------
     -- size of cursor in xcursor system
     -- most  GTK apps, XWayland, and Wayland apps respect this
     xcursor_size = "24",
