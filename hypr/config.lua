@@ -2,6 +2,7 @@ local config = {
     -- apps used by keybinds, autostart, etc
     terminal = "kitty",
     fileManager = "kitty spf",
+    gui_fileManager = "nemo",
     vesktop = "vesktop",
     obs = "obs",
     music = "spotify",
