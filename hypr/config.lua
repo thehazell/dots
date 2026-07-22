@@ -6,14 +6,14 @@ local config = {
     vesktop = "vesktop",
     obs = "obs",
     music = "spotify",
-    ----------- end of apps section -----------
 
     -- if using the caelestia shell this is available
     -- otherwise, use something like vicinae
     menu = "caelestia shell drawers toggle launcher",
 
-    screenshot = "quickshell -c hyprquickshot -n",
+    screenshot = "quickshell -c hyprquickshot",
 
+    -- used by autostart to start caelestia
     shell = "qs -c caelestia",
 
     active_window1 = "rgba(ff8cc8ee)",

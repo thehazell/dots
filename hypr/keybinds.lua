@@ -43,7 +43,7 @@ hl.bind(mainMod .. " + J", hl.dsp.layout("togglesplit")) -- dwindle only
 hl.bind(mainMod .. " + SHIFT + R", hl.dsp.exec_cmd("record"))
 
 -- screenshot
-hl.bind("PRINT", hl.dsp.exec_cmd("quickshell -c hyprquickshot"))
+hl.bind("PRINT", hl.dsp.exec_cmd(config.screenshot))
 
 -- fullscreen screenshot to clipboard
 hl.bind(mainMod .. " + PRINT", hl.dsp.exec_cmd("fullscreen_screenshot"))
