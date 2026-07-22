@@ -24,7 +24,9 @@ hl.bind(mainMod .. " + M", hl.dsp.workspace.toggle_special(config.music_special_
 -- move window to OBS special workspace
 hl.bind(mainMod .. " + SHIFT +  O", hl.dsp.window.move({ workspace = "special:" .. config.obs_special_workspace_name }))
 
+-- move window to music special workspace
 hl.bind(mainMod .. " + SHIFT +  M", hl.dsp.window.move({ workspace = "special:" .. config.music_special_workspace_name }))
+
 -- close window
 -- closeWindowBind:set_enabled(false)
 local closeWindowBind = hl.bind(mainMod .. " + Q", hl.dsp.window.close())
