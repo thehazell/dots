@@ -36,6 +36,9 @@ local config = {
     -- used by hyprcursor themes
     -- probably should just make it the same as xcursor size
     hyprcursor_size = "24",
+
+    -- keyboard layout
+    keyboard_layout = "us",
 }
 
 return config

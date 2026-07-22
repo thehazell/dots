@@ -1,13 +1,15 @@
+local config = require("config")
+
 -- keyboard and mouse config
 -- ive never had to edit this
 -- but hyprland gets mad if its not there
 
 hl.config({
     input = {
-        kb_layout  = "us",
+        kb_layout  = config.keyboard_layout,
         kb_variant = "",
         kb_model   = "",
-        kb_options = "",
+        kb_options = "ctrl:nocaps",
         kb_rules   = "",
 
         follow_mouse = 1,
