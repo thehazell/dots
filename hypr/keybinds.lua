@@ -12,7 +12,10 @@ hl.bind(mainMod .. " + E", hl.dsp.exec_cmd(config.fileManager))
 hl.bind(mainMod .. " + SPACE", hl.dsp.exec_cmd(config.menu))
 
 -- show OBS special workspace
-hl.bind(mainMod .. " + SHIFT + A", hl.dsp.workspace.toggle_special(config.obs_special_workspace_name))
+hl.bind(mainMod .. " + SHIFT + bracketLeft", hl.dsp.workspace.toggle_special(config.obs_special_workspace_name))
+
+-- move window to OBS special workspace
+hl.bind(mainMod .. " + SHIFT +  bracketRight", hl.dsp.window.move({ workspace = "special:" .. config.obs_special_workspace_name }))
 
 -- close window
 -- closeWindowBind:set_enabled(false)
