@@ -1,9 +1,6 @@
 local config = require("config")
 
--- keyboard and mouse config
--- ive never had to edit this
--- but hyprland gets mad if its not there
-
+-- keyboard config
 hl.config({
     input = {
         kb_layout  = config.keyboard_layout,
