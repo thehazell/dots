@@ -13,7 +13,6 @@ hl.bind(mainMod .. " + RETURN", hl.dsp.exec_cmd(config.terminal))
 hl.bind(mainMod .. " + E", hl.dsp.exec_cmd(config.fileManager))
 
 -- open code
--- opens in code special workspace
 hl.bind(mainMod .. " + Z", hl.dsp.exec_cmd(config.code))
 
 -- open nemo
