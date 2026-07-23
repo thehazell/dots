@@ -6,6 +6,7 @@ local config = {
     vesktop = "vesktop",
     obs = "obs",
     music = "spotify",
+    code = "zeditor",
 
     -- if using the caelestia shell this is available
     -- otherwise, use something like vicinae
@@ -27,6 +28,9 @@ local config = {
 
     -- music special workspace
     music_special_workspace_name = "music",
+
+    -- code speical workspace
+    code_special_workspace = "code",
 --------------------------------------------------
     -- size of cursor in xcursor system
     -- most  GTK apps, XWayland, and Wayland apps respect this

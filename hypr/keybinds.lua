@@ -8,6 +8,10 @@ hl.bind(mainMod .. " + RETURN", hl.dsp.exec_cmd(config.terminal))
 -- open file manager
 hl.bind(mainMod .. " + E", hl.dsp.exec_cmd(config.fileManager))
 
+-- open code
+-- opens in code special workspace
+hl.bind(mainMod .. " + Z", hl.dsp.exec_cmd(config.code))
+
 -- open nemo
 -- some apps need a GUI file manager to drag and drop files
 hl.bind(mainMod .. " + SHIFT + E", hl.dsp.exec_cmd(config.gui_fileManager))
