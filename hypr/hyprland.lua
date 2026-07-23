@@ -16,6 +16,7 @@ local config = require("config")
 require("window_rules.hyprland_run")
 require("window_rules.xwayland_drags")
 require("window_rules.no_maximize")
+require("window_rules.steam")
 
 -- i just do vars here because im lazy
 hl.env("XCURSOR_SIZE", config.xcursor_size)

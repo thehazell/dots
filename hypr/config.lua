@@ -31,6 +31,9 @@ local config = {
 
     -- code speical workspace
     code_special_workspace = "code",
+
+    -- games special workspace
+    game_special_worksapce = "game",
 --------------------------------------------------
     -- size of cursor in xcursor system
     -- most  GTK apps, XWayland, and Wayland apps respect this

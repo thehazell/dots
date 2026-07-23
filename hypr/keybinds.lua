@@ -20,11 +20,17 @@ hl.bind(mainMod .. " + SHIFT + E", hl.dsp.exec_cmd(config.gui_fileManager))
 -- open app launcher
 hl.bind(mainMod .. " + SPACE", hl.dsp.exec_cmd(config.menu))
 
+-- show game special workspace
+hl.bind(mainMod .. " + G", hl.dsp.workspace.toggle_special(config.game_special_worksapce))
+
 -- show OBS special workspace
 hl.bind(mainMod .. " + O", hl.dsp.workspace.toggle_special(config.obs_special_workspace_name))
 
 -- show music special workspace
 hl.bind(mainMod .. " + M", hl.dsp.workspace.toggle_special(config.music_special_workspace_name))
+
+-- move window to game special workspace
+hl.bind(mainMod .. " + SHIFT + G", hl.dsp.window.move({workspace = "special:" .. config.game_special_worksapce}))
 
 -- move window to OBS special workspace
 hl.bind(mainMod .. " + SHIFT +  O", hl.dsp.window.move({ workspace = "special:" .. config.obs_special_workspace_name }))
