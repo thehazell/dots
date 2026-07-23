@@ -2,7 +2,10 @@ local config = require("config")
 
 local mainMod = "SUPER" -- Sets "Windows" key as main modifier
 
+-- play/pause spotify using playerctl
+-- i have no idea if this works for other music apps or how it works, so youll have to adjust this if you dont use spotify
 hl.bind("ALT + M", hl.dsp.exec_cmd("playerctl -p spotify play-pause"))
+
 -- open terminal
 hl.bind(mainMod .. " + RETURN", hl.dsp.exec_cmd(config.terminal))
 
