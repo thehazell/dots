@@ -4,7 +4,7 @@ local config = require("config")
 local steamGamesRule = hl.window_rule({
     name = "steam-games-workspace",
     match = {
-        class = "^steam_app_.*",
+        class = "^(steam_app_.*|Project Zomboid)$",
     },
 
     workspace = "special:" .. config.game_special_worksapce,
