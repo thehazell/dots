@@ -14,20 +14,21 @@
 > | `kitty`           | `0.47.4`                 | `0.47.4-1.1`                 | Standard repositories                                 |
 > | `superfile`       | `1.6.0`                  | `1.6.0-1.1`                  | Standard repositories                                 |
 > | `fish`            | `4.8.1`                  | `4.8.1-1`                    | Standard repositories                                 |
-> | `playerctl`       | `2.4.1`                  | `2.4.1-5.1`                  | Standard repositories
+> | `playerctl`       | `2.4.1`                  | `2.4.1-5.1`                  | Standard repositories                                 |
+> | `lxqt-policykit`  | `2.4.0`                  | `2.4.0-1.1`                  | Standard repositories                                 |
 >
 > These packages include many dependencies of their own, which are all required in order for this to work properly. Hyprquickshot, for example, relies on grim, which is used by the fullscreen screenshot script.
 
 Using **yay**:
 
 ```bash
-yay -S quickshell-git caelestia-shell obs-studio sddm uv hyprland kitty superfile fish playerctl
+yay -S quickshell-git caelestia-shell obs-studio sddm uv hyprland kitty superfile fish playerctl lxqt-policykit
 ```
 
 Using **paru**:
 
 ```bash
-paru -S quickshell-git caelestia-shell obs-studio sddm uv hyprland kitty superfile fish playerctl
+paru -S quickshell-git caelestia-shell obs-studio sddm uv hyprland kitty superfile fish playerctl lxqt-policykit
 ```
 
 ---
