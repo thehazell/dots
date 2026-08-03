@@ -18,4 +18,5 @@ hl.on("hyprland.start", function()
     -- this starts obs in a special workspace defined by config.obs_special_workspace_name without focusing it
     hl.exec_cmd(config.obs, { workspace = "special:" .. config.obs_special_workspace_name .. " silent" })
 
+    hl.exec_cmd("lxqt-policykit-agent")
  end)
