@@ -7,7 +7,20 @@ local config = {
     obs = "obs",
     music = "spotify",
     code = "zeditor",
-
+--------------------------------------------------
+    -- list of "games" that will be sent to the game special workspace
+    -- entries are matched against the initial class value listed by
+    -- `hyprctl clients`
+    -- regex patterns are supported (e.g. "steam_app_.*" matches any
+    -- class beginning with "steam_app_")
+    --
+    games = {
+        "steam_app_.*",
+        "Project Zomboid",
+        "XIVLauncher.Core",
+        "ffxiv_dx11.exe",
+    },
+--------------------------------------------------
     -- if using the caelestia shell this is available
     -- otherwise, use something like vicinae
     menu = "caelestia shell drawers toggle launcher",
@@ -22,29 +35,14 @@ local config = {
     inactive_window = "rgba(5a4b55aa)",
 --------------------------------------------------
     -- speical workspace names
-
-    -- obs special workspace
     obs_special_workspace_name = "obs",
-
-    -- music special workspace
     music_special_workspace_name = "music",
-
-    -- code speical workspace
     code_special_workspace = "code",
-
-    -- games special workspace
     game_special_worksapce = "game",
 --------------------------------------------------
-    -- size of cursor in xcursor system
-    -- most  GTK apps, XWayland, and Wayland apps respect this
+    --  misc config options
     xcursor_size = "24",
-
-    -- size of cursor in hyprcursor system
-    -- used by hyprcursor themes
-    -- probably should just make it the same as xcursor size
     hyprcursor_size = "24",
-
-    -- keyboard layout
     keyboard_layout = "us",
 }
 
