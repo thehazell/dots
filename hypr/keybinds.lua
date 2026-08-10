@@ -71,7 +71,7 @@ hl.bind(mainMod .. " + PRINT", hl.dsp.exec_cmd("fullscreen_screenshot"))
 hl.bind(mainMod .. " + SHIFT + PRINT", hl.dsp.exec_cmd("fullscreen_screenshot -s"))
 
 -- clean shutdown, please use this bind to ensure OBS and other programs do not try to enter a safe mode
--- hl.bind(mainMod .. " + ESCAPE", hl.dsp.exec_cmd("hyprshutdown -p 'systemctl poweroff'"))
+hl.bind(mainMod .. " + BACKSPACE", hl.dsp.exec_cmd("hyprshutdown -p 'systemctl poweroff'"))
 
 -- Move focus with mainMod + arrow keys
 hl.bind(mainMod .. " + left",  hl.dsp.focus({ direction = "left" }))
