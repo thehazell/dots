@@ -8,4 +8,5 @@ local gamesRule = hl.window_rule({
     },
 
     workspace = "special:" .. config.game_special_worksapce,
+    border_color = "rgb(00FFFF)",
 })

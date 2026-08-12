@@ -1,0 +1,8 @@
+binds {
+    Mod+Return { spawn "kitty"; }
+    Mod+Q { close-window; }
+    Mod+Up { focus-workspace-up; }
+    Mod+Down { focus-workspace-down; }
+    Mod+F { fullscreen-window; }
+    Mod+Shift+F { maximize-column; }
+}
