@@ -24,13 +24,13 @@
 Using **yay**:
 
 ```bash
-yay -S quickshell-git caelestia-shell obs-studio sddm uv hyprland kitty superfile fish playerctl lxqt-policykit hyprshutdown
+yay -S quickshell-git caelestia-shell obs-studio sddm uv hyprland kitty superfile fish playerctl lxqt-policykit hyprshutdown nemo       
 ```
 
 Using **paru**:
 
 ```bash
-paru -S quickshell-git caelestia-shell obs-studio sddm uv hyprland kitty superfile fish playerctl lxqt-policykit hyprshutdown
+paru -S quickshell-git caelestia-shell obs-studio sddm uv hyprland kitty superfile fish playerctl lxqt-policykit hyprshutdown nemo
 ```
 
 ---
