@@ -63,6 +63,7 @@ when they should be replaced. Privileged system links are intentionally opt-in:
 ./install.sh sddm
 ```
 
+Icons are installed with `./install.sh fluent-icons` using fluent's own installer.
 ---
 # Main Components
 
