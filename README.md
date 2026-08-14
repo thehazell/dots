@@ -18,17 +18,19 @@
 > | `lxqt-policykit`  | `2.4.0`                  | `2.4.0-1.1`                  | Standard repositories                                 |
 >
 > These packages include many dependencies of their own, which are all required in order for this to work properly. Hyprquickshot, for example, relies on grim, which is used by the fullscreen screenshot script.
+>
+> Additionally, ensure that you have installed quickshell-git and not noctalia-qs, which will satisfy the requirement and then result in a failed launch of hyprquickshot due to a pragma error.
 
 Using **yay**:
 
 ```bash
-yay -S quickshell-git caelestia-shell obs-studio sddm uv hyprland kitty superfile fish playerctl lxqt-policykit
+yay -S quickshell-git caelestia-shell obs-studio sddm uv hyprland kitty superfile fish playerctl lxqt-policykit hyprshutdown
 ```
 
 Using **paru**:
 
 ```bash
-paru -S quickshell-git caelestia-shell obs-studio sddm uv hyprland kitty superfile fish playerctl lxqt-policykit
+paru -S quickshell-git caelestia-shell obs-studio sddm uv hyprland kitty superfile fish playerctl lxqt-policykit hyprshutdown
 ```
 
 ---
