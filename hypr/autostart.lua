@@ -5,9 +5,13 @@ local config = require("config")
 hl.on("hyprland.start", function()
     hl.exec_cmd(config.shell)
 
-    -- start vesktop on default workspace
-    hl.exec_cmd(config.vesktop)
+    local username = os.getenv("USER")
 
+    -- start vesktop on default workspace
+    -- starts vesktop only on the account named hazel
+    if username == "hazel" then
+        hl.exec_cmd(config.vesktop)
+    end
     -- start spotify on special workspace without focusing it
     hl.exec_cmd(config.music, { workspace = "special:" .. config.music_special_workspace_name .. " silent" })
 
