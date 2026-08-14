@@ -20,6 +20,7 @@ require("window_rules.games")
 require("window_rules.spotify")
 require("window_rules.floorp")
 require("window_rules.kitty")
+require("window_rules.workspaces")
 
 -- i just do vars here because im lazy
 hl.env("XCURSOR_SIZE", config.xcursor_size)
@@ -27,7 +28,7 @@ hl.env("HYPRCURSOR_SIZE", config.hyprcursor_size)
 hl.env("QT_AUTO_SCREEN_SCALE_FACTOR", "1")
 hl.env("QT_WAYLAND_DISABLE_WINDOWDECORATION", "1")
 hl.env("QT_QPA_PLATFORMTHEME", "qt5ct")
-hl.env("QS_ICON_THEME", "MoreWaita")
+hl.env("QS_ICON_THEME", "Fluent-dark")
 
 hl.config({
     general = {
