@@ -62,7 +62,7 @@ The following setup guides cover the recommended installation and configuration 
 | Caelestia     | https://github.com/thehazell/dots/blob/main/caelestia/SETUP.md                                    |
 | Hypr Scripts  | https://github.com/thehazell/dots/blob/main/hypr/SCRIPTS.md                                       |
 | SDDM          | https://github.com/thehazell/dots/blob/main/sddm/SETUP.md                                         |
-| HyprQuickShot | https://github.com/thehazell/hyprquickshot/blob/bd46adce40940503a2ff587ff2c8e26ab7514156/SETUP.md |
+| HyprQuickShot | https://github.com/thehazell/hyprquickshot/blob/main/SETUP.md                                     |
 
 ### Installer
 
