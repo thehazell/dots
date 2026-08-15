@@ -5,11 +5,9 @@
 > | ----------------- | ------------------------ | ---------------------------- | ----------------------------------------------------- |
 > | `quickshell-git`  | `0.3.0`                  | `0.3.0.r3.g7d1c9a9-1`        | AUR                                                   |
 > | `caelestia-shell` | `2.1.0`                  | `2.1.0-1`                    | AUR                                                   |
-> | `obs-studio`      | `32.1.2`                 | `32.1.2-7.1`                 | Standard repositories                                 |
 > | `sddm`            | `0.21.0`                 | `0.21.0-8`                   | Standard repositories                                 |
 > | `hyprquickshot`   | `N/A`                    | `N/A`                        | [GitHub](https://github.com/thehazell/hyprquickshot/) |
 > | `uv`              | `0.11.28`                | `0.11.28`                    | Standard repositories                                 |
-> | `obs-cli`         | `0.9.5`                  | `0.9.5`                      | [GitHub](https://github.com/pschmitt/obs-cli)         |
 > | `hyprland`        | `0.55.4`                 | `0.55.4-1`                   | Standard repositories                                 |
 > | `kitty`           | `0.47.4`                 | `0.47.4-1.1`                 | Standard repositories                                 |
 > | `superfile`       | `1.6.0`                  | `1.6.0-1.1`                  | Standard repositories                                 |
@@ -26,29 +24,17 @@
 > These packages include many dependencies of their own, which are all required in order for this to work properly. Hyprquickshot, for example, relies on `grim`, which is used by the fullscreen screenshot script. `wl-clipboard` provides `wl-copy`, and `libnotify` provides `notify-send`, both of which are used by the screenshot and recording scripts.
 >
 > Additionally, ensure that you have installed `quickshell-git` and not `noctalia-qs`, which will satisfy the requirement and then result in a failed launch of HyprQuickShot due to a pragma error.
->
-> `obs-cli` is not installed through the package manager. Install it using `uv`:
->
-> ```bash
-> uv tool install obs-cli
-> ```
 
 Using **yay**:
 
 ```bash
-yay -S quickshell-git caelestia-shell obs-studio sddm uv hyprland kitty superfile fish playerctl lxqt-policykit grim wl-clipboard libnotify hyprshutdown nemo zsh
+yay -S quickshell-git caelestia-shell sddm hyprland kitty superfile fish playerctl lxqt-policykit grim wl-clipboard libnotify hyprshutdown nemo zsh
 ```
 
 Using **paru**:
 
 ```bash
-paru -S quickshell-git caelestia-shell obs-studio sddm uv hyprland kitty superfile fish playerctl lxqt-policykit grim wl-clipboard libnotify hyprshutdown nemo zsh
-```
-
-Install `obs-cli` with `uv`:
-
-```bash
-uv tool install obs-cli
+paru -S quickshell-git caelestia-shell sddm hyprland kitty superfile fish playerctl lxqt-policykit grim wl-clipboard libnotify hyprshutdown nemo zsh
 ```
 
 ---
