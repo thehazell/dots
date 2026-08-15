@@ -4,11 +4,10 @@ require("monitors")
 require("autostart")
 require("input")
 require("appearance")
+require("trackpad")
 
 -- config file
 local config = require("config")
-
--- require("trackpad")
 
 -- require("permissions")
 
