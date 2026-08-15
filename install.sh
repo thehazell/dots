@@ -24,7 +24,7 @@ Commands:
   deps              Install required packages using paru or yay.
   submodules       Initialize git submodules, including hyprquickshot.
   link              Create user-level configuration and script symlinks.
-  zsh               Create Zsh configuration symlinks.
+  zsh               Create Zsh and Starship configuration symlinks.
   fluent-icons      Clone and install the Fluent icon theme.
   caelestia-scheme  Link the Caelestia scheme with sudo (opt-in).
   sddm              Link the SDDM configuration and theme with sudo (opt-in).
@@ -291,6 +291,12 @@ link_zsh_files() {
         ((failures++))
     fi
 
+    if ! link_path \
+        "$REPO_ROOT/zsh/starship.toml" \
+        "$HOME/.config/starship.toml"; then
+        ((failures++))
+    fi
+
     if (( failures > 0 )); then
         printf '\n' >&2
         error "Zsh linking failed with $failures error(s)"
@@ -542,7 +548,8 @@ check() {
         "$REPO_ROOT/sddm/themes/R1999_1" \
         "$REPO_ROOT/tools/hyprquickshot" \
         "$REPO_ROOT/zsh/zshrc" \
-        "$REPO_ROOT/zsh/zprofile"
+        "$REPO_ROOT/zsh/zprofile" \
+        "$REPO_ROOT/zsh/starship.toml"
     do
         require_path "$source" || status=1
     done
@@ -646,7 +653,7 @@ case "$COMMAND" in
     all)
         initialize_submodules || exit 1
         link_user_files || exit 1
-        link_zsh_files
+        link_zsh_files || exit 1
         ;;
     help)
         usage
