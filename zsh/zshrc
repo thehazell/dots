@@ -10,26 +10,38 @@ plugins=(
 
 source "$ZSH/oh-my-zsh.sh"
 
+# Zsh Autocomplete
+source /usr/share/zsh/plugins/zsh-autocomplete/zsh-autocomplete.plugin.zsh
+
+# Syntax highlighting
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+# Prompt & tools
 eval "$(starship init zsh)"
 eval "$(zoxide init zsh)"
 
-
+# Editor
 export EDITOR=nvim
 export VISUAL=nvim
 
+# PATH
+export PATH="$HOME/.local/bin:$PATH"
+
+# Aliases
 alias update='yay -Syu'
 alias code='codium'
+
 alias cd='z'
 alias cdi='zi'
+
 alias ls='eza --icons=always'
 alias ll='eza -lah --icons=always'
 alias la='eza -a --icons=always'
 alias lt='eza --tree --level=2 --icons=always'
 alias lta='eza --tree --level=2 -a --icons=always'
+
 alias cat='bat'
 alias grep='rg'
 
+# Startup
 fastfetch
-
-export PATH="$HOME/.local/bin:$PATH"
-
