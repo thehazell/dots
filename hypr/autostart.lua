@@ -23,7 +23,7 @@ hl.on("hyprland.start", function()
     -- if you experience issues such as incorrect window recorded, or nothing at all, check your source settings
     -- this starts obs in a special workspace defined by config.obs_special_workspace_name without focusing it
     if not hostname == config.laptop_hostname then
-            hl.exec_cmd(config.obs, { workspace = "special:" .. config.obs_special_workspace_name .. " silent" })
+        hl.exec_cmd(config.obs, { workspace = "special:" .. config.obs_special_workspace_name .. " silent" })
     end
 
     hl.exec_cmd("lxqt-policykit-agent")
