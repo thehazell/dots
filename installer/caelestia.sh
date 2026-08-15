@@ -46,19 +46,30 @@ sudo_link_path() {
 }
 
 caelestia_scheme_directory() {
-    if [[ -n "${CAELESTIA_SCHEME_DIR:-}" ]]; then
-        printf '%s\n' "$CAELESTIA_SCHEME_DIR"
-        return 0
-    fi
+    local package_dir
 
     if ! command -v python3 >/dev/null 2>&1; then
         error "python3 is required to locate the Caelestia scheme directory"
-        error "set CAELESTIA_SCHEME_DIR instead"
         return 1
     fi
 
-    python3 -c \
-        'import sysconfig; print(sysconfig.get_paths()["purelib"] + "/caelestia/data/schemes/hazel/default")'
+    package_dir="$(
+        python3 -c '
+import importlib.util
+
+spec = importlib.util.find_spec("caelestia")
+
+if spec is None or spec.submodule_search_locations is None:
+    raise SystemExit(1)
+
+print(next(iter(spec.submodule_search_locations)))
+'
+    )" || {
+        error "could not locate the installed Caelestia package"
+        return 1
+    }
+
+    printf '%s/data/schemes/hazel/default\n' "$package_dir"
 }
 
 install_caelestia_scheme() {
@@ -68,7 +79,12 @@ install_caelestia_scheme() {
 
     destination="$(caelestia_scheme_directory)" || return 1
 
-    action "destination: $destination"
+    if [[ ! -d "$destination" ]]; then
+        error "Caelestia scheme directory does not exist: $destination"
+        return 1
+    fi
+
+    action "scheme directory: $destination"
 
     if ! confirm_privileged \
         "This will use sudo to link the Caelestia scheme into $destination."; then
