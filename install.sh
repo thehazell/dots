@@ -21,6 +21,7 @@ Usage: $(basename "$0") [--dry-run] [--force] [--yes] <command>
 
 Commands:
   check             Verify installer sources and required commands.
+  deps              Install required packages using paru or yay.
   submodules        Initialize git submodules, including hyprquickshot.
   link              Create user-level configuration and script symlinks.
   fluent-icons      Clone and install the Fluent icon theme.
@@ -158,7 +159,7 @@ link_directory() {
             error "cannot create directory symlink: destination already exists"
             printf '       source:       %s\n' "$source" >&2
             printf '       destination:  %s\n' "$target" >&2
-            printf '       use --force to replace the existing symlink\n' >&2
+            printf '       use --force to replace the existing file or symlink\n' >&2
             printf '\n' >&2
             return 1
         fi
@@ -168,6 +169,47 @@ link_directory() {
     fi
 
     run ln -s -- "$source" "$target"
+}
+
+install_dependencies() {
+    local aur_helper=""
+
+    if command -v paru >/dev/null 2>&1; then
+        aur_helper="paru"
+    elif command -v yay >/dev/null 2>&1; then
+        aur_helper="yay"
+    else
+        error "no AUR helper found; install paru or yay first"
+        return 1
+    fi
+
+    info "using AUR helper: $aur_helper"
+
+    "$aur_helper" -S --needed \
+        quickshell-git \
+        caelestia-shell \
+        obs-studio \
+        sddm \
+        uv \
+        hyprland \
+        kitty \
+        superfile \
+        fish \
+        playerctl \
+        lxqt-policykit \
+        hyprshutdown \
+        nemo \
+        qt6-declarative \
+        qt6-5compat \
+        qt6-svg \
+        qt6-multimedia \
+        qt6-multimedia-ffmpeg \
+        gst-plugins-base \
+        gst-plugins-good \
+        gst-plugins-bad \
+        gst-plugins-ugly \
+        fzf \
+        acl
 }
 
 link_user_files() {
@@ -343,53 +385,75 @@ sudo_link_path() {
     sudo ln -s -- "$source" "$target"
 }
 
-set_sddm_file_permissions() {
-    local source="$1"
+set_sddm_acl() {
+    local path="$1"
+    local permissions="$2"
 
     if "$DRY_RUN"; then
-        printf 'dry-run: chmod 644 -- %q\n' "$source"
+        printf 'dry-run: sudo setfacl -m u:sddm:%s -- %q\n' \
+            "$permissions" \
+            "$path"
         return 0
     fi
 
-    chmod 644 -- "$source"
+    sudo setfacl -m "u:sddm:$permissions" -- "$path"
 }
 
-set_sddm_directory_permissions() {
-    local source="$1"
+set_sddm_tree_acl() {
+    local path="$1"
 
     if "$DRY_RUN"; then
-        printf 'dry-run: chmod 755 -- %q\n' "$source"
+        printf 'dry-run: sudo setfacl -R -m u:sddm:rX -- %q\n' "$path"
         return 0
     fi
 
-    chmod 755 -- "$source"
+    sudo setfacl -R -m u:sddm:rX -- "$path"
 }
 
 prepare_sddm_permissions() {
     local source
+    local path
+
+    command -v setfacl >/dev/null 2>&1 || {
+        error "setfacl is required for SDDM permissions"
+        error "install it with: sudo pacman -S acl"
+        return 1
+    }
+
+    id sddm >/dev/null 2>&1 || {
+        error "sddm user does not exist"
+        error "install SDDM before running the SDDM installer phase"
+        return 1
+    }
 
     source="$REPO_ROOT/sddm/theme.conf"
     require_file "$source" || return 1
 
-    info "setting SDDM configuration permissions: 644"
-    set_sddm_file_permissions "$source" || return 1
-
     source="$REPO_ROOT/sddm/themes/R1999_1"
     require_path "$source" || return 1
 
-    info "setting SDDM theme permissions: 755/644"
+    info "granting SDDM traversal access to repository path"
 
-    while IFS= read -r -d '' source; do
-        if [[ -d "$source" ]]; then
-            set_sddm_directory_permissions "$source" || return 1
-        elif [[ -f "$source" ]]; then
-            set_sddm_file_permissions "$source" || return 1
-        fi
-    done < <(
-        find "$REPO_ROOT/sddm/themes/R1999_1" -print0
-    )
+    for path in \
+        "$HOME" \
+        "$HOME/Projects" \
+        "$HOME/Projects/dots" \
+        "$HOME/Projects/dots/sddm" \
+        "$HOME/Projects/dots/sddm/themes"
+    do
+        set_sddm_acl "$path" "--x" || return 1
+    done
 
-    return 0
+    info "granting SDDM read access to configuration and theme"
+
+    set_sddm_acl \
+        "$REPO_ROOT/sddm/theme.conf" \
+        "r--" || return 1
+
+    set_sddm_tree_acl \
+        "$REPO_ROOT/sddm/themes/R1999_1" || return 1
+
+    info "SDDM permissions configured"
 }
 
 caelestia_scheme_directory() {
@@ -425,7 +489,7 @@ install_caelestia_scheme() {
 
 install_sddm() {
     if ! confirm_privileged \
-        "This will use sudo to link the SDDM configuration and theme."; then
+        "This will use sudo to link the SDDM configuration/theme and grant the sddm user read/traversal access to the repository SDDM files."; then
         info "privileged SDDM phase cancelled"
         return 0
     fi
@@ -465,6 +529,12 @@ check() {
         status=1
     }
 
+    command -v setfacl >/dev/null 2>&1 || {
+        error "setfacl is required for SDDM permissions"
+        error "install it with: sudo pacman -S acl"
+        status=1
+    }
+
     [[ -d "$REPO_ROOT/.git" || -f "$REPO_ROOT/.git" ]] || {
         error "repository metadata not found at $REPO_ROOT"
         status=1
@@ -497,7 +567,7 @@ while (( $# > 0 )); do
         --yes)
             ASSUME_YES=true
             ;;
-        check|submodules|link|fluent-icons|caelestia-scheme|sddm|all|help)
+        deps|check|submodules|link|fluent-icons|caelestia-scheme|sddm|all|help)
             if [[ -n "$COMMAND" ]]; then
                 error "only one command may be specified"
                 usage
@@ -521,6 +591,9 @@ done
 COMMAND="${COMMAND:-help}"
 
 case "$COMMAND" in
+    deps)
+        install_dependencies
+        ;;
     check)
         check
         ;;
