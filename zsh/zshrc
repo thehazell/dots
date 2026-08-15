@@ -18,6 +18,7 @@ export EDITOR=nvim
 export VISUAL=nvim
 
 alias update='yay -Syu'
+alias code='codium'
 alias cd='z'
 alias cdi='zi'
 alias ls='eza --icons=always'
