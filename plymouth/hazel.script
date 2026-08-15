@@ -1,0 +1,21 @@
+Window.SetBackgroundTopColor(0.007843, 0.070588, 0.031373);
+Window.SetBackgroundBottomColor(0.007843, 0.070588, 0.031373);
+
+screen_width = Window.GetWidth();
+screen_height = Window.GetHeight();
+
+background_image = Image("background.png");
+background_image = background_image.Scale(screen_width, screen_height);
+
+background_sprite = Sprite(background_image);
+background_sprite.SetPosition(0, 0, -100);
+background_sprite.SetOpacity(1);
+
+spinner_image = Image("throbber-0001.png");
+spinner_sprite = Sprite(spinner_image);
+
+spinner_x = (screen_width - spinner_image.GetWidth()) / 2;
+spinner_y = (screen_height - spinner_image.GetHeight()) / 2;
+
+spinner_sprite.SetPosition(spinner_x, spinner_y, 100);
+spinner_sprite.SetOpacity(1);
