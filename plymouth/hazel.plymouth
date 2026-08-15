@@ -1,8 +1,8 @@
 [Plymouth Theme]
-Name=Arch Neon
-Description=Minimal fullscreen neon Arch boot theme
+Name=Hazel
+Description=My theme!
 ModuleName=script
 
 [script]
-ImageDir=/usr/share/plymouth/themes/arch-neon
-ScriptFile=/usr/share/plymouth/themes/arch-neon/arch-neon.script
+ImageDir=/usr/share/plymouth/themes/hazel
+ScriptFile=/usr/share/plymouth/themes/hazel/hazel.script
