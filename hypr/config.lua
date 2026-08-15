@@ -35,7 +35,6 @@ local config = {
     inactive_window = "rgba(5a4b55aa)",
 --------------------------------------------------
     -- speical workspace names
-    obs_special_workspace_name = "obs",
     music_special_workspace_name = "music",
     code_special_workspace = "code",
     game_special_worksapce = "game",

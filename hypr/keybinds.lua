@@ -25,17 +25,11 @@ hl.bind(mainMod .. " + SPACE", hl.dsp.exec_cmd(config.menu))
 -- show game special workspace
 hl.bind(mainMod .. " + G", hl.dsp.workspace.toggle_special(config.game_special_worksapce))
 
--- show OBS special workspace
-hl.bind(mainMod .. " + O", hl.dsp.workspace.toggle_special(config.obs_special_workspace_name))
-
 -- show music special workspace
 hl.bind(mainMod .. " + M", hl.dsp.workspace.toggle_special(config.music_special_workspace_name))
 
 -- move window to game special workspace
 hl.bind(mainMod .. " + SHIFT + G", hl.dsp.window.move({workspace = "special:" .. config.game_special_worksapce}))
-
--- move window to OBS special workspace
-hl.bind(mainMod .. " + SHIFT +  O", hl.dsp.window.move({ workspace = "special:" .. config.obs_special_workspace_name }))
 
 -- move window to music special workspace
 hl.bind(mainMod .. " + SHIFT +  M", hl.dsp.window.move({ workspace = "special:" .. config.music_special_workspace_name }))
@@ -59,7 +53,7 @@ hl.bind(mainMod .. " + P", hl.dsp.window.pseudo())
 hl.bind(mainMod .. " + J", hl.dsp.layout("togglesplit")) -- dwindle only
 
 -- toggles screen recording, focuses whatever your OBS settings are
-hl.bind(mainMod .. " + SHIFT + R", hl.dsp.exec_cmd("record"))
+hl.bind(mainMod .. " + SHIFT + R", hl.dsp.exec_cmd("caelestia record"))
 
 -- screenshot
 hl.bind("PRINT", hl.dsp.exec_cmd(config.screenshot))
