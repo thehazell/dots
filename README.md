@@ -16,34 +16,41 @@
 > | `fish`            | `4.8.1`                  | `4.8.1-1`                    | Standard repositories                                 |
 > | `playerctl`       | `2.4.1`                  | `2.4.1-5.1`                  | Standard repositories                                 |
 > | `lxqt-policykit`  | `2.4.0`                  | `2.4.0-1.1`                  | Standard repositories                                 |
+> | `grim`            | `1.5.0`                  | `1.5.0-2`                    | Standard repositories                                 |
+> | `wl-clipboard`    | `2.3.0`                  | `2.3.0-1`                    | Standard repositories                                 |
+> | `libnotify`       | `0.8.8`                  | `0.8.8-1`                    | Standard repositories                                 |
+> | `hyprshutdown`    | `0.1.1`                  | `0.1.1-6`                    | Standard repositories                                 |
+> | `nemo`            | `6.6.4`                  | `6.6.4-1`                    | Standard repositories                                 |
+> | `zsh`             | `5.9.2`                  | `5.9.2-1`                    | Standard repositories                                 |
 >
-> These packages include many dependencies of their own, which are all required in order for this to work properly. Hyprquickshot, for example, relies on grim, which is used by the fullscreen screenshot script.
+> These packages include many dependencies of their own, which are all required in order for this to work properly. Hyprquickshot, for example, relies on `grim`, which is used by the fullscreen screenshot script. `wl-clipboard` provides `wl-copy`, and `libnotify` provides `notify-send`, both of which are used by the screenshot and recording scripts.
 >
-> Additionally, ensure that you have installed quickshell-git and not noctalia-qs, which will satisfy the requirement and then result in a failed launch of hyprquickshot due to a pragma error.
+> Additionally, ensure that you have installed `quickshell-git` and not `noctalia-qs`, which will satisfy the requirement and then result in a failed launch of HyprQuickShot due to a pragma error.
 
 Using **yay**:
 
 ```bash
-yay -S quickshell-git caelestia-shell obs-studio sddm uv hyprland kitty superfile fish playerctl lxqt-policykit hyprshutdown nemo       
+yay -S quickshell-git caelestia-shell obs-studio sddm uv hyprland kitty superfile fish playerctl lxqt-policykit grim wl-clipboard libnotify hyprshutdown nemo zsh
 ```
 
 Using **paru**:
 
 ```bash
-paru -S quickshell-git caelestia-shell obs-studio sddm uv hyprland kitty superfile fish playerctl lxqt-policykit hyprshutdown nemo
+paru -S quickshell-git caelestia-shell obs-studio sddm uv hyprland kitty superfile fish playerctl lxqt-policykit grim wl-clipboard libnotify hyprshutdown nemo zsh
 ```
 
 ---
+
 ## Setup
 
 The following setup guides cover the recommended installation and configuration for each component:
 
-| Component     | Guide                                                                                                         |
-| ------------- | ------------------------------------------------------------------------------------------------------------- |
-| Caelestia     | [SETUP.md](https://github.com/thehazell/dots/blob/main/caelestia/SETUP.md)                                    |
-| Hypr Scripts  | [SCRIPTS.md](https://github.com/thehazell/dots/blob/main/hypr/SCRIPTS.md)                                     |
-| SDDM          | [SETUP.md](https://github.com/thehazell/dots/blob/main/sddm/SETUP.md)                                         |
-| HyprQuickShot | [SETUP.md](https://github.com/thehazell/hyprquickshot/blob/bd46adce40940503a2ff587ff2c8e26ab7514156/SETUP.md) |
+| Component     | Guide                                                                                             |
+| ------------- | ------------------------------------------------------------------------------------------------- |
+| Caelestia     | https://github.com/thehazell/dots/blob/main/caelestia/SETUP.md                                    |
+| Hypr Scripts  | https://github.com/thehazell/dots/blob/main/hypr/SCRIPTS.md                                       |
+| SDDM          | https://github.com/thehazell/dots/blob/main/sddm/SETUP.md                                         |
+| HyprQuickShot | https://github.com/thehazell/hyprquickshot/blob/bd46adce40940503a2ff587ff2c8e26ab7514156/SETUP.md |
 
 ### Installer
 
@@ -64,7 +71,9 @@ when they should be replaced. Privileged system links are intentionally opt-in:
 ```
 
 Icons are installed with `./install.sh fluent-icons` using fluent's own installer.
+
 ---
+
 # Main Components
 
 This repository contains my Hyprland configuration, SDDM theme, Caelestia customization, and a collection of tools that streamline my day-to-day workflow.
