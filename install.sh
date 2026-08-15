@@ -22,8 +22,9 @@ Usage: $(basename "$0") [--dry-run] [--force] [--yes] <command>
 Commands:
   check             Verify installer sources and required commands.
   deps              Install required packages using paru or yay.
-  submodules        Initialize git submodules, including hyprquickshot.
+  submodules       Initialize git submodules, including hyprquickshot.
   link              Create user-level configuration and script symlinks.
+  zsh               Create Zsh configuration symlinks.
   fluent-icons      Clone and install the Fluent icon theme.
   caelestia-scheme  Link the Caelestia scheme with sudo (opt-in).
   sddm              Link the SDDM configuration and theme with sudo (opt-in).
@@ -275,6 +276,31 @@ link_user_files() {
     info "user-level links completed successfully"
 }
 
+link_zsh_files() {
+    local failures=0
+
+    if ! link_path \
+        "$REPO_ROOT/zsh/zshrc" \
+        "$HOME/.zshrc"; then
+        ((failures++))
+    fi
+
+    if ! link_path \
+        "$REPO_ROOT/zsh/zprofile" \
+        "$HOME/.zprofile"; then
+        ((failures++))
+    fi
+
+    if (( failures > 0 )); then
+        printf '\n' >&2
+        error "Zsh linking failed with $failures error(s)"
+        printf '\n' >&2
+        return 1
+    fi
+
+    info "Zsh links completed successfully"
+}
+
 install_fluent_icons() {
     local tmpdir
     local repo_dir
@@ -514,7 +540,9 @@ check() {
         "$REPO_ROOT/caelestia/schemes/hazel/default/dark.txt" \
         "$REPO_ROOT/sddm/theme.conf" \
         "$REPO_ROOT/sddm/themes/R1999_1" \
-        "$REPO_ROOT/tools/hyprquickshot"
+        "$REPO_ROOT/tools/hyprquickshot" \
+        "$REPO_ROOT/zsh/zshrc" \
+        "$REPO_ROOT/zsh/zprofile"
     do
         require_path "$source" || status=1
     done
@@ -567,7 +595,7 @@ while (( $# > 0 )); do
         --yes)
             ASSUME_YES=true
             ;;
-        deps|check|submodules|link|fluent-icons|caelestia-scheme|sddm|all|help)
+        deps|check|submodules|link|zsh|fluent-icons|caelestia-scheme|sddm|all|help)
             if [[ -n "$COMMAND" ]]; then
                 error "only one command may be specified"
                 usage
@@ -603,6 +631,9 @@ case "$COMMAND" in
     link)
         link_user_files
         ;;
+    zsh)
+        link_zsh_files
+        ;;
     fluent-icons)
         install_fluent_icons
         ;;
@@ -614,7 +645,8 @@ case "$COMMAND" in
         ;;
     all)
         initialize_submodules || exit 1
-        link_user_files
+        link_user_files || exit 1
+        link_zsh_files
         ;;
     help)
         usage
