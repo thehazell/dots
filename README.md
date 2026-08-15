@@ -20,6 +20,7 @@
 > | `hyprshutdown`    | `0.1.1`                  | `0.1.1-6`                    | Standard repositories                                 |
 > | `nemo`            | `6.6.4`                  | `6.6.4-1`                    | Standard repositories                                 |
 > | `zsh`             | `5.9.2`                  | `5.9.2-1`                    | Standard repositories                                 |
+> | `caelestia-cli`   | `1.1.2`                  | `1.1.2-1`                    | AUR                                                   |
 >
 > These packages include many dependencies of their own, which are all required in order for this to work properly. Hyprquickshot, for example, relies on `grim`, which is used by the fullscreen screenshot script. `wl-clipboard` provides `wl-copy`, and `libnotify` provides `notify-send`, both of which are used by the screenshot and recording scripts.
 >
@@ -28,13 +29,13 @@
 Using **yay**:
 
 ```bash
-yay -S quickshell-git caelestia-shell sddm hyprland kitty superfile fish playerctl lxqt-policykit grim wl-clipboard libnotify hyprshutdown nemo zsh
+yay -S quickshell-git caelestia-shell sddm hyprland kitty caelestia-cli superfile fish playerctl lxqt-policykit grim wl-clipboard libnotify hyprshutdown nemo zsh
 ```
 
 Using **paru**:
 
 ```bash
-paru -S quickshell-git caelestia-shell sddm hyprland kitty superfile fish playerctl lxqt-policykit grim wl-clipboard libnotify hyprshutdown nemo zsh
+paru -S quickshell-git caelestia-shell sddm hyprland kitty caelestia-cli superfile fish playerctl lxqt-policykit grim wl-clipboard libnotify hyprshutdown nemo zsh
 ```
 
 ---
