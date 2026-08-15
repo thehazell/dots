@@ -1,11 +1,13 @@
-#!/usr/bin/env fish
+#!/usr/bin/env zsh
 
-if test (obs-cli record status) = started
-    if obs-cli record stop
-        notify-send -i "obs" "Recording Stopped" "OBS recording has been stopped."
-    end
+if [[ "$(obs-cli record status)" == "started" ]]; then
+    if obs-cli record stop; then
+        notify-send -i "obs" "Recording Stopped" \
+            "OBS recording has been stopped."
+    fi
 else
-    if obs-cli record start
-        notify-send -i "obs" "Recording Started" "OBS is now recording."
-    end
-end
+    if obs-cli record start; then
+        notify-send -i "obs" "Recording Started" \
+            "OBS is now recording."
+    fi
+fi
