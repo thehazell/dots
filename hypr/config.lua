@@ -44,6 +44,8 @@ local config = {
     xcursor_size = "24",
     hyprcursor_size = "24",
     keyboard_layout = "us",
+    main_user = "hazel",
+    laptop_hostname = "hackerlaptop"
 }
 
 return config
