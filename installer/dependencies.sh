@@ -19,9 +19,7 @@ install_dependencies() {
     run "$aur_helper" -S --needed \
         quickshell-git \
         caelestia-shell \
-        obs-studio \
         sddm \
-        uv \
         hyprland \
         kitty \
         superfile \
