@@ -18,4 +18,6 @@ hl.on("hyprland.start", function()
     hl.exec_cmd(config.music, { workspace = "special:" .. config.music_special_workspace_name .. " silent" })
 
     hl.exec_cmd("lxqt-policykit-agent")
+
+    hl.exec_cmd("nm-applet")
  end)
