@@ -10,8 +10,16 @@ plugins=(
 
 source "$ZSH/oh-my-zsh.sh"
 
-# Zsh Autocomplete
-source /usr/share/zsh/plugins/zsh-autocomplete/zsh-autocomplete.plugin.zsh
+source "$ZSH/oh-my-zsh.sh"
+
+# Autocomplete
+if [[ "$HOST" == "laptop" ]]; then
+    # Lightweight inline suggestions
+    source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+else
+    # Full menu-based autocomplete
+    source /usr/share/zsh/plugins/zsh-autocomplete/zsh-autocomplete.plugin.zsh
+fi
 
 # Syntax highlighting
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
