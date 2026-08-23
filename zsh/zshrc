@@ -43,5 +43,7 @@ alias lta='eza --tree --level=2 -a --icons=always'
 alias cat='bat'
 alias grep='rg'
 
+source /usr/share/nvm/init-nvm.sh
+
 # Startup
 fastfetch

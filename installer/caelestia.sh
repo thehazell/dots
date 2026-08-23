@@ -80,8 +80,21 @@ install_caelestia_scheme() {
     destination="$(caelestia_scheme_directory)" || return 1
 
     if [[ ! -d "$destination" ]]; then
-        error "Caelestia scheme directory does not exist: $destination"
-        return 1
+        if [[ "$destination" == *"python3.14"* ]] && [[ ! -d "/usr/lib/python3.14" ]]; then
+            error "Python 3.14 system directory does not seem to exist"
+            return 1
+        fi
+
+        action "scheme directory does not exist, creating it recursively: $destination"
+        
+        if "$DRY_RUN"; then
+            action "would create directory: $destination"
+        else
+            run sudo mkdir -p -- "$destination" || {
+                error "failed to create scheme directory: $destination"
+                return 1
+            }
+        fi
     fi
 
     action "scheme directory: $destination"
