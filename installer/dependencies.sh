@@ -17,7 +17,7 @@ install_dependencies() {
     action "using AUR helper: $aur_helper"
 
     run "$aur_helper" -S --needed \
-        quickshell-git \
+        aur/quickshell-git \
         caelestia-shell \
         sddm \
         hyprland \
