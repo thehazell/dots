@@ -29,13 +29,13 @@
 Using **yay**:
 
 ```bash
-yay -S quickshell-git caelestia-shell sddm hyprland kitty caelestia-cli superfile fish playerctl lxqt-policykit grim wl-clipboard libnotify hyprshutdown nemo zsh starship zoxide nvm zsh-autocomplete
+yay -S aur/quickshell-git caelestia-shell sddm hyprland kitty caelestia-cli superfile fish playerctl lxqt-policykit grim wl-clipboard libnotify hyprshutdown nemo zsh starship zoxide nvm zsh-autocomplete
 ```
 
 Using **paru**:
 
 ```bash
-paru -S quickshell-git caelestia-shell sddm hyprland kitty caelestia-cli superfile fish playerctl lxqt-policykit grim wl-clipboard libnotify hyprshutdown nemo zsh starship zoxide nvm zsh-autocomplete
+paru -S aur/quickshell-git caelestia-shell sddm hyprland kitty caelestia-cli superfile fish playerctl lxqt-policykit grim wl-clipboard libnotify hyprshutdown nemo zsh starship zoxide nvm zsh-autocomplete
 ```
 
 For **OMZSH**:
