@@ -29,17 +29,19 @@
 Using **yay**:
 
 ```bash
-yay -S quickshell-git caelestia-shell sddm hyprland kitty caelestia-cli superfile fish playerctl lxqt-policykit grim wl-clipboard libnotify hyprshutdown nemo zsh
+yay -S quickshell-git caelestia-shell sddm hyprland kitty caelestia-cli superfile fish playerctl lxqt-policykit grim wl-clipboard libnotify hyprshutdown nemo zsh starship zoxide nvm zsh-autocomplete
 ```
 
 Using **paru**:
 
 ```bash
-paru -S quickshell-git caelestia-shell sddm hyprland kitty caelestia-cli superfile fish playerctl lxqt-policykit grim wl-clipboard libnotify hyprshutdown nemo zsh
+paru -S quickshell-git caelestia-shell sddm hyprland kitty caelestia-cli superfile fish playerctl lxqt-policykit grim wl-clipboard libnotify hyprshutdown nemo zsh starship zoxide nvm zsh-autocomplete
 ```
 
----
-
+For **OMZSH**:
+```bash
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+```
 ## Setup
 
 The following setup guides cover the recommended installation and configuration for each component:
