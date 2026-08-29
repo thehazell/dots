@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=nwg-look
+Comment=GTK3 settings editor
+Exec=nwg-look
+Icon=nwg-look
+Terminal=false
+Type=Application
+Categories=Settings;DesktopSettings;GTK;
+StartupNotify=true
