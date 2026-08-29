@@ -1,26 +1,32 @@
 > [!WARNING]
 > You must have the following dependencies installed for the full configuration to work properly:
 >
-> | Package           | Minimum Upstream Version | Minimum Arch Package Version | Install From                                          |
-> | ----------------- | ------------------------ | ---------------------------- | ----------------------------------------------------- |
-> | `quickshell-git`  | `0.3.0`                  | `0.3.0.r3.g7d1c9a9-1`        | AUR                                                   |
-> | `caelestia-shell` | `2.1.0`                  | `2.1.0-1`                    | AUR                                                   |
-> | `sddm`            | `0.21.0`                 | `0.21.0-8`                   | Standard repositories                                 |
-> | `hyprquickshot`   | `N/A`                    | `N/A`                        | [GitHub](https://github.com/thehazell/hyprquickshot/) |
-> | `uv`              | `0.11.28`                | `0.11.28`                    | Standard repositories                                 |
-> | `hyprland`        | `0.55.4`                 | `0.55.4-1`                   | Standard repositories                                 |
-> | `kitty`           | `0.47.4`                 | `0.47.4-1.1`                 | Standard repositories                                 |
-> | `superfile`       | `1.6.0`                  | `1.6.0-1.1`                  | Standard repositories                                 |
-> | `fish`            | `4.8.1`                  | `4.8.1-1`                    | Standard repositories                                 |
-> | `playerctl`       | `2.4.1`                  | `2.4.1-5.1`                  | Standard repositories                                 |
-> | `lxqt-policykit`  | `2.4.0`                  | `2.4.0-1.1`                  | Standard repositories                                 |
-> | `grim`            | `1.5.0`                  | `1.5.0-2`                    | Standard repositories                                 |
-> | `wl-clipboard`    | `2.3.0`                  | `2.3.0-1`                    | Standard repositories                                 |
-> | `libnotify`       | `0.8.8`                  | `0.8.8-1`                    | Standard repositories                                 |
-> | `hyprshutdown`    | `0.1.1`                  | `0.1.1-6`                    | Standard repositories                                 |
-> | `nemo`            | `6.6.4`                  | `6.6.4-1`                    | Standard repositories                                 |
-> | `zsh`             | `5.9.2`                  | `5.9.2-1`                    | Standard repositories                                 |
-> | `caelestia-cli`   | `1.1.2`                  | `1.1.2-1`                    | AUR                                                   |
+>| Package                   | Minimum Upstream Version | Minimum Arch Package Version | Install From                    |
+>| ------------------------- | ------------------------ | ---------------------------- | ------------------------------- |
+>| `quickshell-git`          | `0.3.0`                  | `0.3.0.r3.g7d1c9a9-1`        | AUR                             |
+>| `caelestia-shell`         | `2.1.0`                  | `2.1.0-1`                    | AUR                             |
+>| `sddm`                    | `0.21.0`                 | `0.21.0-8`                   | Standard repositories           |
+>| `hyprquickshot`           | `N/A`                    | `N/A`                        | GitHub                          |
+>| `hyprland`                | `0.55.4`                 | `0.55.4-1`                   | Standard repositories           |
+>| `kitty`                   | `0.47.4`                 | `0.47.4-1.1`                 | Standard repositories           |
+>| `superfile`               | `1.6.0`                  | `1.6.0-1.1`                  | Standard repositories           |
+>| `fish`                    | `4.8.1`                  | `4.8.1-1`                    | Standard repositories           |
+>| `playerctl`               | `2.4.1`                  | `2.4.1-5.1`                  | Standard repositories           |
+>| `lxqt-policykit`          | `2.4.0`                  | `2.4.0-1.1`                  | Standard repositories           |
+>| `grim`                    | `1.5.0`                  | `1.5.0-2`                    | Standard repositories           |
+>| `wl-clipboard`            | `2.3.0`                  | `2.3.0-1`                    | Standard repositories           |
+>| `libnotify`               | `0.8.8`                  | `0.8.8-1`                    | Standard repositories           |
+>| `hyprshutdown`            | `0.1.1`                  | `0.1.1-6`                    | Standard repositories           |
+>| `nemo`                    | `6.6.4`                  | `6.6.4-1`                    | Standard repositories           |
+>| `zsh`                     | `5.9.2`                  | `5.9.2-1.1`                  | CachyOS Extra (`znver4`)        |
+>| `starship`                | `1.26.0`                 | `1.26.0-1`                   | Standard repositories           |
+>| `zoxide`                  | `0.10.0`                 | `0.10.0-1.1`                 | CachyOS Extra (`znver4`)        |
+>| `nvm`                     | `0.40.5`                 | `0.40.5-1`                   | Standard repositories           |
+>| `zsh-autocomplete`        | `25.03.19`               | `25.03.19-1`                 | Standard repositories           |
+>| `zsh-autosuggestions`     | `0.7.1`                  | `0.7.1-1`                    | Standard repositories (`extra`) |
+>| `zsh-syntax-highlighting` | `0.8.0`                  | `0.8.0-2`                    | Standard repositories           |
+>| `caelestia-cli`           | `1.1.2`                  | `1.1.2-1`                    | AUR                             |
+
 >
 > These packages include many dependencies of their own, which are all required in order for this to work properly. Hyprquickshot, for example, relies on `grim`, which is used by the fullscreen screenshot script. `wl-clipboard` provides `wl-copy`, and `libnotify` provides `notify-send`, both of which are used by the screenshot and recording scripts.
 >
@@ -29,13 +35,13 @@
 Using **yay**:
 
 ```bash
-yay -S aur/quickshell-git caelestia-shell sddm hyprland kitty caelestia-cli superfile fish playerctl lxqt-policykit grim wl-clipboard libnotify hyprshutdown nemo zsh starship zoxide nvm zsh-autocomplete
+yay -S aur/quickshell-git caelestia-shell sddm hyprland kitty caelestia-cli superfile fish playerctl lxqt-policykit grim wl-clipboard libnotify hyprshutdown nemo zsh starship zoxide nvm zsh-autocomplete zsh-autosuggestions zsh-syntax-highlighting
 ```
 
 Using **paru**:
 
 ```bash
-paru -S aur/quickshell-git caelestia-shell sddm hyprland kitty caelestia-cli superfile fish playerctl lxqt-policykit grim wl-clipboard libnotify hyprshutdown nemo zsh starship zoxide nvm zsh-autocomplete
+paru -S aur/quickshell-git caelestia-shell sddm hyprland kitty caelestia-cli superfile fish playerctl lxqt-policykit grim wl-clipboard libnotify hyprshutdown nemo zsh starship zoxide nvm zsh-autocomplete zsh-autosuggestions zsh-syntax-highlighting
 ```
 
 For **OMZSH**:
