@@ -19,6 +19,7 @@ install_dependencies() {
     run "$aur_helper" -S --needed \
         aur/quickshell-git \
         caelestia-shell \
+        caelestia-cli \
         sddm \
         hyprland \
         kitty \
@@ -26,8 +27,18 @@ install_dependencies() {
         fish \
         playerctl \
         lxqt-policykit \
+        grim \
+        wl-clipboard \
+        libnotify \
         hyprshutdown \
         nemo \
+        zsh \
+        starship \
+        zoxide \
+        nvm \
+        zsh-autocomplete \
+        zsh-autosuggestions \
+        zsh-syntax-highlighting \
         qt6-declarative \
         qt6-5compat \
         qt6-svg \
